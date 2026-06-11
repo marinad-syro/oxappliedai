@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / local tooling
+.gstack/
+.cursor/
+.vscode/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Env files (if you add secrets later)
+.env
+.env.*
