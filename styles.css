@@ -10,6 +10,11 @@
   --accent: #b8a6e3;
   --accent-hover: #c9baec;
   --accent-contrast: #061429;
+  --header-bg: #f6f3ff;
+  --header-text: #061429;
+  --header-text-muted: #182f55;
+  --header-border: #b8a6e3;
+  --header-hover-bg: rgba(76, 92, 138, 0.12);
   --radius: 3px;
   --container: 1080px;
 }
@@ -49,16 +54,18 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 20, 41, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: var(--header-bg);
+  border-bottom: none;
+  box-shadow:
+    0 1px 0 rgba(184, 166, 227, 0.45),
+    0 6px 24px rgba(6, 20, 41, 0.07);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 96px;
+  height: 88px;
   padding-left: 16px;
   padding-right: 24px;
 }
@@ -71,7 +78,7 @@ a {
 }
 
 .brand-logo {
-  height: 76px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -81,23 +88,23 @@ a {
   gap: 8px;
 }
 
-.nav-link {
+.site-header .nav-link {
   padding: 8px 14px;
   border-radius: var(--radius);
-  color: var(--text-muted);
+  color: var(--header-text-muted);
   font-size: 0.92rem;
   font-weight: 500;
   transition: color 0.15s, background 0.15s;
 }
 
-.nav-link:hover {
-  color: var(--text);
-  background: var(--bg-elevated);
+.site-header .nav-link:hover {
+  color: var(--header-text);
+  background: var(--header-hover-bg);
 }
 
-.nav-link.active {
-  color: var(--text);
-  background: var(--bg-elevated);
+.site-header .nav-link.active {
+  color: var(--header-text);
+  background: var(--header-hover-bg);
 }
 
 /* ---------- Buttons ---------- */
@@ -133,8 +140,44 @@ a {
 /* ---------- Hero ---------- */
 
 .hero {
+  position: relative;
   padding: 110px 0 90px;
   border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, #121f38 0%, var(--bg) 96px),
+    var(--bg);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(184, 166, 227, 0.35) 18%,
+    rgba(184, 166, 227, 0.85) 50%,
+    rgba(184, 166, 227, 0.35) 82%,
+    transparent 100%
+  );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(
+    to bottom,
+    rgba(246, 243, 255, 0.08),
+    transparent
+  );
+  pointer-events: none;
 }
 
 .hero-kicker {
@@ -312,8 +355,44 @@ a {
 /* ---------- Term card page ---------- */
 
 .page-header {
+  position: relative;
   padding: 80px 0 50px;
   border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, #121f38 0%, var(--bg) 80px),
+    var(--bg);
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(184, 166, 227, 0.35) 18%,
+    rgba(184, 166, 227, 0.85) 50%,
+    rgba(184, 166, 227, 0.35) 82%,
+    transparent 100%
+  );
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(
+    to bottom,
+    rgba(246, 243, 255, 0.08),
+    transparent
+  );
+  pointer-events: none;
 }
 
 .page-header h1 {
@@ -433,11 +512,11 @@ a {
 
 @media (max-width: 640px) {
   .brand-logo {
-    height: 60px;
+    height: 48px;
   }
 
   .header-inner {
-    height: 84px;
+    height: 72px;
     padding-left: 12px;
   }
 
