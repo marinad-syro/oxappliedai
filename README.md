@@ -1,6 +1,6 @@
-# Oxford Applied AI Society — Website
+# Upskill AI Oxford — Website
 
-Static website for the Oxford Applied AI Society. No build step or dependencies — plain HTML and CSS.
+Static website for Upskill AI Oxford. No build step or dependencies — plain HTML and CSS.
 
 ## Structure
 
