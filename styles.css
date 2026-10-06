@@ -190,6 +190,10 @@ a {
   flex-wrap: wrap;
 }
 
+.hero-committee {
+  display: none;
+}
+
 /* ---------- Sections ---------- */
 
 .section {
@@ -545,27 +549,23 @@ a {
   .header-inner {
     flex-direction: column;
     height: auto;
-    gap: 4px;
-    padding: 10px 16px 12px;
+    gap: 12px;
+    padding: 18px 16px 14px;
   }
 
   .brand {
     margin-right: 0;
+    justify-content: center;
+    width: 100%;
   }
 
   .brand-logo {
-    height: 52px;
+    height: auto;
+    width: min(220px, 68vw);
   }
 
   .site-nav {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .site-header .nav-link {
-    white-space: nowrap;
-    padding: 7px 10px;
-    font-size: 0.84rem;
+    display: none;
   }
 
   .hero,
@@ -581,6 +581,10 @@ a {
 
   .hero-actions {
     justify-content: center;
+  }
+
+  .hero-committee {
+    display: inline-flex;
   }
 
   .section {
